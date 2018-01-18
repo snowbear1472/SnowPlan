@@ -3,6 +3,7 @@
 #include <vector>
 #include <string>
 #include <algorithm>
+#include <memory>
 
 namespace SnowPlan
 {
@@ -27,4 +28,6 @@ namespace SnowPlan
 
         return buffer;
     }
+
+    string_buffer read_from_file(const std::string& path);
 }

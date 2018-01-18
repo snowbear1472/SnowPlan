@@ -26,7 +26,7 @@ namespace SnowPlan
         
         public:
             void load_from_file(const std::string& path);
-            void save(const std::string& path) const;
+            void save(const std::string& path, const SaveType& type) const;
 
             void show_info(std::ostream& stream) const;
             void show_info() const;

@@ -5,9 +5,9 @@ namespace SnowPlan
 {
     void Plan::load_from_file(const std::string& path)
     {
-
+        
     }
-    void Plan::save(const std::string& path) const
+    void Plan::save(const std::string& path, const SaveType& type) const
     {
 
     }
@@ -53,6 +53,6 @@ namespace SnowPlan
     }
     void Plan::save_html(const std::string& path) const
     {
-        
+
     }
 }
