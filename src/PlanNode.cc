@@ -1,5 +1,7 @@
 #include "../include/SnowPlan/PlanNode.hh"
 
+#include <algorithm>
+
 
 namespace SnowPlan
 {
@@ -40,10 +42,11 @@ namespace SnowPlan
     }
     const std::vector<PlanNode>& PlanNode::remove_child(const PlanNode& _value)
     {
-        
+        auto it = std::find(childs_ptr_->begin(), childs_ptr_->end(), _value);
+        childs_ptr_->erase(it);
     }
-    const std::vector<PlanNode>::const_iterator PlanNode::find_child(const PlanNode& _value) const
+    std::vector<PlanNode>::iterator PlanNode::find_child(const PlanNode& _value)
     {
-
+        return std::find(childs_ptr_->begin(), childs_ptr_->end(), _value);
     }
 }
