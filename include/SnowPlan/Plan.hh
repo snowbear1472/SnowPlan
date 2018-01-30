@@ -14,6 +14,9 @@ namespace SnowPlan
 
             std::vector<std::vector<PlanNode>> nodes_;
 
+        private:
+            std::unique_ptr<std::vector<PlanNode>> selected_node_;
+
         public:
             Plan() = default
 
@@ -35,10 +38,10 @@ namespace SnowPlan
             const std::vector<std::vector<PlanNode>>& nodes() const;
             const std::vector<std::vector<PlanNode>>& add_node_vector(const std::vector<PlanNode>& _value);
             const std::vector<std::vector<PlanNode>>& remove_node_vector(const std::vector<PlanNode>& _value);
-            std::vector<std::vector<PlanNode>>::iterator find_node_vector(const std::vector<PlanNode>& _value);
+            std::vector<std::vector<PlanNode>>::iterator find_node_vector(const std::vector<PlanNode>& _value) const;
 
             const std::vector<PlanNode>& add_child(const PlanNode& _value);
             const std::vector<PlanNode>& remove_child(const PlanNode& _value);
-            std::vector<PlanNode>::iterator find_child(const PlanNode& _value);
+            std::vector<PlanNode>::iterator find_child(const PlanNode& _value) const;
     };
 }

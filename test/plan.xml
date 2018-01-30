@@ -1,0 +1,18 @@
+<xml>
+    <plan>
+        <name>독일 계획</name>
+        <description>written by snowbear1472</description>
+
+        <node>
+            <text>독일 유학 계획</text>
+            
+            <ndoe>
+                <text>정보 수집</text>
+
+                <node>
+                    <text>독일 교육 시스템</text>
+                </node>
+            </node>
+        </ndoe>    
+    </plan>
+</xml>

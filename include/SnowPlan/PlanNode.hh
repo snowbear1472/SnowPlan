@@ -13,11 +13,14 @@ namespace SnowPlan
             std::string text_;
             bool complete_;
 
-            std::shared_ptr<std::vector<PlanNode>> childs_ptr_;
+            std::vector<PlanNode> childs_;
+        
+        private:
+            std::unique_ptr<PlanNode> selected_node_;
 
         public:
             PlanNode() = default;
-            PlanNode(const std::string& _text, const bool& _complete, std::vector<PlanNode>& _childs_ptr);
+            PlanNode(const std::string& _text, const bool& _complete);
 
             PlanNode(const PlanNode& copy) = delete;
             PlanNode& operator = (const PlanNode& copy) = delete;
@@ -31,9 +34,13 @@ namespace SnowPlan
             const bool& complete() const;
             const bool& complete(const bool& _value);
 
+            const PlanNode& selected_node() const;
+            const PlanNode& selected_node(const std::vector<PlanNode>::iterator& _it);
+
+        public:
             const std::vector<PlanNode>& childs() const;
-            const std::vector<PlanNode>& add_child(const PlanNode& _value);
-            const std::vector<PlanNode>& remove_child(const PlanNode& _value);
-            std::vector<PlanNode>::iterator find_child(const PlanNode& _value);
+            const std::vector<PlanNode>& add_node(const PlanNode& _value);
+            const std::vector<PlanNode>& remove_node(const PlanNode& _value);
+            std::vector<PlanNode>::iterator find_node(const PlanNode& _value) const;
     };
 }
